@@ -23,10 +23,13 @@ public class Anagrams{
             System.out.println("Usage: java Anagrams <input_file> <output_file>");
             return;
         }
-        BufferedReader f= new BufferedReader(new FileReader(args[0])){
-        }
-    }
-    int[] D={0};
+        Map<String, Integer> wordCounts = new HashMap<>();
+        int lineNumber = 0;
+        int lines = 0;
+
+        
+    
+    
 
     
 }
