@@ -55,7 +55,17 @@ public class Anagrams{
                     wordCounts.put(cleaned, wordCounts.getOrDefault(cleaned, 0) + 1);
                  }
             }
-        }      
+        }
+        
+    }
+     Map<String, List<String>> A = new HashMap<>();
+    for (String w : D.keySet()) {
+            String a = signature(w);
+            if (!A.containsKey(a)) {
+                A.put(a, new ArrayList<>(Arrays.asList(w)));
+            } else {
+                A.get(a).add(w);
+            }
     }
 }
         
