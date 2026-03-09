@@ -48,7 +48,7 @@ public class Anagrams{
             System.exit(1);
         }
         int lineNumber = 0;
-        int line = 0;
+        int lines = 0;
         while ((line = f.readLine()) != null) {
             lineNumber++;
             lines++;
