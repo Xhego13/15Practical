@@ -100,6 +100,14 @@ public class Anagrams{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
+         try {
+            Process s = Runtime.getRuntime().exec("rm anagrams anagrams.sorted");
+            s.waitFor();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     
 }
         
