@@ -100,6 +100,19 @@ public class Anagrams{
         } catch (IOException e) {
             e.printStackTrace();
         }
+          try (PrintWriter asftex = new PrintWriter(new FileWriter("latex/theAnagrams.tex"))) {
+            char letter = 'X';
+            for (String lemma : aa) {
+                char initial = lemma.charAt(0);
+                if (Character.toLowerCase(initial) != Character.toLowerCase(letter)) {
+                    letter = initial;
+                    asftex.printf("\n\\vspace{14pt}\n\\noindent\\textbf{\\Large %s}\\\\*[+12pt]\n", Character.toUpperCase(initial));
+                }
+                asftex.println(lemma);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         
          try {
             Process s = Runtime.getRuntime().exec("rm anagrams anagrams.sorted");
