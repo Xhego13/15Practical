@@ -24,7 +24,6 @@ public class Anagrams{
             return;
         }
         BufferedReader f= new BufferedReader(new FileReader(args[0])){
-
         }
     }
 
