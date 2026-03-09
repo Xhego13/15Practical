@@ -22,8 +22,9 @@ public class Anagrams{
         if(args.length!=2){
             System.out.println("Usage: java Anagrams <input_file> <output_file>");
             return;
-            
-            
+        }
+        BufferedReader f= new BufferedReader(new FileReader(args[0])){
+
         }
     }
 
