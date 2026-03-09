@@ -25,7 +25,7 @@ public class Anagrams{
         }
         Map<String, Integer> wordCounts = new HashMap<>();
         int lineNumber = 0;
-        int lines = 0;
+        int line = 0;
         while ((line = reader.readLine()) != null) {
             lineNumber++;
             lines++;
