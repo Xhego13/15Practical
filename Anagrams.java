@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Anagrams {
 
-    // Run system commands
+    
     static int System(String command) {
         System.out.println("-".repeat(50) + ">" + command);
         try {
