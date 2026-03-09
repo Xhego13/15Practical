@@ -67,6 +67,40 @@ public class Anagrams{
                 A.get(a).add(w);
             }
     }
+    try (PrintWriter f = new PrintWriter(new FileWriter("anagrams"))) {
+        for (String key : A.keySet()) {
+             if (A.get(key).size() > 1) {
+                 String anagramlist = "";
+                 for (String word : A.get(key)) {
+                        if (anagramlist.isEmpty()) {
+                            anagramlist = word;
+                        } else {
+                            anagramlist += " " + word;
+                        }
+                }
+                f.println(anagramlist + " \\\\");
+
+                    
+                for (int repeat = 0; repeat < A.get(key).size() - 1; repeat++) {
+                    int space = anagramlist.indexOf(' ');
+                    anagramlist = anagramlist.substring(space + 1) + " " + anagramlist.substring(0, space);
+                    f.println(anagramlist + " \\\\");
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        List<String> aa = new ArrayList<>();
+        try (BufferedReader asf = new BufferedReader(new FileReader("anagrams.sorted"))) {
+            String line;
+            while ((line = asf.readLine()) != null) {
+                aa.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    
 }
         
 
