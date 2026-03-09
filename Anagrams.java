@@ -22,13 +22,34 @@ public class Anagrams{
         
          if (args.length == 1) {
             String inputFile = args[0];
-            System.out.println("Data file: " + inputFile);
-            
+            System.out.println("Data file: " + inputFile);    
         }
-        Map<String, Integer> wordCounts = new HashMap<>();
+       Map<String, Integer> D = new HashMap<>();
+
+            try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(new FileInputStream(inputFile), "ISO-8859-1"))) {
+
+                // File opened successfully, ready for processing later
+                // Example: just read one line to show it works
+                String line = reader.readLine();
+                if (line != null) {
+                    System.out.println("First line: " + line);
+                }
+
+            } catch (IOException e) {
+                System.err.println("Error reading file: " + e.getMessage());
+            }
+
+        } else {
+            System.out.println("Usage: java Anagrams inputfile");
+            if (args.length > 0) {
+                System.out.println("You gave:\n" + args[0]);
+            }
+            System.exit(1);
+        }
         int lineNumber = 0;
         int line = 0;
-        while ((line = reader.readLine()) != null) {
+        while ((line = f.readLine()) != null) {
             lineNumber++;
             lines++;
             String[] words = line.split("\\s+");
