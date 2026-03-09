@@ -21,11 +21,24 @@ public class Anagrams{
     public static void main(String[] args){
         if(args.length!=2){
             System.out.println("Usage: java Anagrams <input_file> <output_file>");
-            return;
+               return;
         }
         Map<String, Integer> wordCounts = new HashMap<>();
         int lineNumber = 0;
         int lines = 0;
+        while ((line = reader.readLine()) != null) {
+            lineNumber++;
+            lines++;
+            String[] words = line.split("\\s+");
+            for (String w : words) {
+                String cleaned = w.replaceAll("[0-9(),.;:_.!?\\-\\[\\]]", "").trim();
+                if (!cleaned.isEmpty()) {
+                    wordCounts.put(cleaned, wordCounts.getOrDefault(cleaned, 0) + 1);
+                 }
+            }
+        }      
+    }
+        
 
         
     
