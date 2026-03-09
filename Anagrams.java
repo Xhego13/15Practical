@@ -104,7 +104,7 @@ public class Anagrams {
                 e.printStackTrace();
             }
 
-            // Write LaTeX file
+            
             try (PrintWriter asftex = new PrintWriter(new FileWriter("latex/theAnagrams.tex"))) {
                 char letter = 'X';
                 for (String lemma : aa) {
@@ -120,7 +120,7 @@ public class Anagrams {
                 e.printStackTrace();
             }
 
-            // Cleanup
+            
             System("rm anagrams anagrams.sorted");
 
         } else {
