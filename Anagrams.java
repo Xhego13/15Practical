@@ -19,9 +19,11 @@ public class Anagrams{
         return new String(chars);
     }
     public static void main(String[] args){
-        if(args.length!=2){
-            System.out.println("Usage: java Anagrams <input_file> <output_file>");
-               return;
+        
+         if (args.length == 1) {
+            String inputFile = args[0];
+            System.out.println("Data file: " + inputFile);
+            
         }
         Map<String, Integer> wordCounts = new HashMap<>();
         int lineNumber = 0;
